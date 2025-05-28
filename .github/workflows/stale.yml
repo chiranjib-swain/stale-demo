@@ -21,3 +21,4 @@ jobs:
           days-before-issue-stale: 1
           days-before-pr-stale: 2
           days-before-close: 7
+          remove-stale-when-updated: 'true'
