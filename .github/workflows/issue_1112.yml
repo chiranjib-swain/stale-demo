@@ -16,7 +16,7 @@ jobs:
       - uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-pr-message: "This PR hasn't received any updates in a year and will be automatically closed in 30 days. Feel free to re-open it if you plan to continue working on that pull request or think it deserves attention from Flathub admins"Add commentMore actions
+          stale-pr-message: "This PR hasn't received any updates in a year and will be automatically closed in 30 days. Feel free to re-open it if you plan to continue working on that pull request or think it deserves attention from Flathub admins"
           days-before-stale: -1
           days-before-close: -1
           days-before-pr-stale: 365
