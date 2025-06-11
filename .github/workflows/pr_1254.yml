@@ -1,7 +1,11 @@
 name: "Close stale issues and PRs"
 on:
   workflow_dispatch:
-
+permissions:
+  issues: write
+  pull-requests: write
+  actions: write
+  
 jobs:
   stale:
     runs-on: ubuntu-latest
