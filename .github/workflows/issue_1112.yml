@@ -1,8 +1,8 @@
 name: 'Stale PRs only'
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
+  # schedule:
+  #   - cron: '0 0 * * *'
   workflow_dispatch: # Allows manual triggering
 permissions:
   issues: write
