@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: suyashgaonkar/stale@sort_issues_by
         with:
-          sort-issues-by: "updated"
+          sort-by: "updated"
           # Add other options as needed for your test (see stale docs)
