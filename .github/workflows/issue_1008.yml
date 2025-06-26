@@ -12,15 +12,15 @@ jobs:
     steps:
     - uses: actions/stale@v9.1.0
       with:
-        days-before-pr-stale: 6
+        days-before-pr-stale: 1
         days-before-pr-close: 14
         operations-per-run: 300
-        close-pr-label: stale
+        close-pr-label: Close
         ignore-updates: false
         stale-pr-message: >
           The Lizmap project highly values your contribution and would love to see
           this work merged!
-          Unfortunately this PR has not had any activity in the last 6 days and
+          Unfortunately this PR has not had any activity in the last 1 day and
           is being automatically marked as "stale".
           If there is no further activity on this pull request, it will be closed in two
           weeks.
