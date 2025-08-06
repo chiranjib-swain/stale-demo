@@ -11,7 +11,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: chiranjib-swain/stale@feature/octokit-retry-429-handling
+      - uses: chiranjib-swain/stale@octokit-retry-test
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'This issue is stale because it has been open for 30 days with no activity.'
