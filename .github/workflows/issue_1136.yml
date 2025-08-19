@@ -9,7 +9,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v9
+      - uses: chiranjib-swain/stale@issue-1136
         with:
           operations-per-run: 5
           days-before-stale: 60
