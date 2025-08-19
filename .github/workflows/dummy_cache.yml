@@ -1,0 +1,12 @@
+name: "Dummy cache creator"
+on:
+  workflow_dispatch:
+
+jobs:
+  create-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/cache@v4
+        with:
+          path: dummy-path
+          key: dummy-cache-${{ github.run_id }}-${{ github.run_number }}
