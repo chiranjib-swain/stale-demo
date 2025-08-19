@@ -1,6 +1,9 @@
-name: "Dummy cache creator"
+name: "Create Dummy Cache Every 5 Minutes"
+
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
+  workflow_dispatch:       # Allows manual runs too
 
 jobs:
   create-cache:
