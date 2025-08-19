@@ -1,4 +1,4 @@
-name: "Mark stale issues and pull requests"
+name: "1136 - Mark stale issues and pull requests "
 on:
   workflow_dispatch: 
 
