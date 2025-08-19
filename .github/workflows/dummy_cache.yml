@@ -6,6 +6,7 @@ jobs:
   create-cache:
     runs-on: ubuntu-latest
     steps:
+      - run: mkdir -p dummy-path && echo "hello" > dummy-path/file.txt
       - uses: actions/cache@v4
         with:
           path: dummy-path
