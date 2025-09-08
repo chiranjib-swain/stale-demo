@@ -1,0 +1,17 @@
+name: Reproduce Node 24 Deprecation Warnings
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run actions/stale
+        uses: actions/stale@v10
+
+      - name: Show Node.js version
+        run: node --version
