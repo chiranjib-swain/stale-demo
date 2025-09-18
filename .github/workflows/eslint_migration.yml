@@ -1,0 +1,22 @@
+name: "Test Stale Action (ESM + ESLint Migration)"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  test-stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Stale Action
+        uses: chiranjib-swain/stale@chore/migrate-to-esm
+        with:
+          days-before-stale: 100
+          days-before-close: 50
