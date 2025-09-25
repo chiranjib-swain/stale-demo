@@ -2,7 +2,12 @@ name: Reproduce Node 24 Deprecation Warnings
 
 on:
   workflow_dispatch:
+permissions:
+  issues: write
+  pull-requests: write
+  actions: write
 
+  
 jobs:
   stale:
     runs-on: ubuntu-latest
