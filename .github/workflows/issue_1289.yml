@@ -12,6 +12,9 @@ jobs:
 
       - name: Run actions/stale
         uses: chiranjib-swain/stale@fix/node24-deprecation-warnings
+        with:
+          days-before-stale: 180
+          days-before-close: 10
 
       - name: Show Node.js version
         run: node --version
