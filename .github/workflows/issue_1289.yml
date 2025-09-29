@@ -7,13 +7,17 @@ permissions:
   pull-requests: write
   actions: write
 
-  
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Clean npm cache and remove node_modules
+        run: |
+          npm cache clean --force
+          rm -rf node_modules
 
       - name: Run actions/stale
         uses: chiranjib-swain/stale@fix/node24-deprecation-warnings
