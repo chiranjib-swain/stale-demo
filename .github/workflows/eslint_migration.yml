@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Stale Action
-        uses: chiranjib-swain/stale@chore/migrate-to-esm
+        uses: chiranjib-swain/stale@test-nodefetch
         with:
-          days-before-stale: 100
+          days-before-stale: 150
           days-before-close: 50
