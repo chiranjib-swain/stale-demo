@@ -9,7 +9,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: chiranjib-swain/stale@issue-1136
+      - uses: itchyny/actions-stale/fix-state-cache-check
         with:
           operations-per-run: 5
           days-before-stale: 60
