@@ -9,7 +9,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: itchyny/stale@fix-checking-state-cache
+      - uses: itchyny/actions-stale@fix-state-cache-check
         with:
           operations-per-run: 5
           days-before-stale: 60
