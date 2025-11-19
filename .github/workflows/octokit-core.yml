@@ -1,0 +1,26 @@
+name: OCtokit Upgrade test
+
+on:
+  workflow_dispatch:
+permissions:
+  issues: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clean npm cache and remove node_modules
+        run: |
+          npm cache clean --force
+          rm -rf node_modules
+
+      - name: Run actions/stale
+        uses: chiranjib-swain/stale@octokit/core-upgrade
+        with:
+          days-before-stale: 180
+          days-before-close: 10
