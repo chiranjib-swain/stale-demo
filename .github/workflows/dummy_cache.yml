@@ -1,8 +1,8 @@
 name: "Create Dummy Cache Every 3 Minutes"
 
 on:
-  # schedule:
-  #   - cron: '*/3 * * * *'  # Every 3 minutes
+  schedule:
+    - cron: '*/3 * * * *'  # Every 3 minutes
   workflow_dispatch:       # Allows manual runs too
 
 jobs:
