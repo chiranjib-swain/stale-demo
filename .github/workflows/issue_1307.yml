@@ -1,0 +1,21 @@
+name: "Close stale PRs Issue 1307"
+
+on:
+    # schedule:
+    #     - cron: "0 6 * * *" # Runs daily at 6:00 AM UTC
+    workflow_dispatch:
+
+jobs:
+    stale:
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+        steps:
+            - uses: actions/stale@v10
+              with:
+                  days-before-pr-stale: 7 # Number of days of inactivity before marking as stale
+                  stale-pr-message: "This Pull Request is stale because it has been open 7 days with no activity."
+                  days-before-pr-close: 7 # Number of days after marking as stale before closing
+                  close-pr-message: "Closing this Pull Request due to inactivity."
+                  days-before-issue-stale: -1 # Disables marking issues as stale
+                  days-before-issue-close: -1 # Disables closing stale issues
