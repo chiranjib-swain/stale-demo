@@ -20,18 +20,6 @@ jobs:
               echo "Contents: ${{ toJson(github.event.repository.permissions.contents) }}"
               echo "Issues: ${{ toJson(github.event.repository.permissions.issues) }}"
               echo "Pull Requests: ${{ toJson(github.event.repository.permissions.pull_requests) }}"
-              echo "Metadata: ${{ toJson(github.event.repository.permissions.metadata) }}"
-              echo "Administration: ${{ toJson(github.event.repository.permissions.administration) }}"
-              echo "Actions: ${{ toJson(github.event.repository.permissions.actions) }}"
-              echo "Checks: ${{ toJson(github.event.repository.permissions.checks) }}"
-              echo "Deployments: ${{ toJson(github.event.repository.permissions.deployments) }}"
-              echo "Environments: ${{ toJson(github.event.repository.permissions.environments) }}"
-              echo "Packages: ${{ toJson(github.event.repository.permissions.packages) }}"
-              echo "Pages: ${{ toJson(github.event.repository.permissions.pages) }}"
-              echo "Repository Projects: ${{ toJson(github.event.repository.permissions.repository_projects) }}"
-              echo "Secrets: ${{ toJson(github.event.repository.permissions.secrets) }}"
-              echo "Security Events: ${{ toJson(github.event.repository.permissions.security_events) }}"
-              echo "Statuses: ${{ toJson(github.event.repository.permissions.statuses) }}"
 
           - name: Run actions/stale
             uses: actions/stale@v10
