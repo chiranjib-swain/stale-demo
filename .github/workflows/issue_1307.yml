@@ -1,8 +1,9 @@
 name: "Close stale PRs Issue 1307"
 
 on:
+    # Uncomment the schedule below to enable daily runs at 6:00 AM UTC
     # schedule:
-    #     - cron: "0 6 * * *" # Runs daily at 6:00 AM UTC
+    #     - cron: "0 6 * * *"
     workflow_dispatch:
 
 jobs:
@@ -10,13 +11,34 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             pull-requests: write
-            issues: write
+            # issues: write # Added this to ensure issues can be processed if needed
+
         steps:
-            - uses: actions/stale@v10
-              with:
-                  days-before-pr-stale: 7 # Number of days of inactivity before marking as stale
-                  stale-pr-message: "This Pull Request is stale because it has been open 7 days with no activity."
-                  days-before-pr-close: 7 # Number of days after marking as stale before closing
-                  close-pr-message: "Closing this Pull Request due to inactivity."
-                  days-before-issue-stale: -1 # Disables marking issues as stale
-                  days-before-issue-close: -1 # Disables closing stale issues
+          - name: Check Permissions
+            run: |
+              echo "Repository permissions:"
+              echo "Contents: ${{ toJson(github.event.repository.permissions.contents) }}"
+              echo "Issues: ${{ toJson(github.event.repository.permissions.issues) }}"
+              echo "Pull Requests: ${{ toJson(github.event.repository.permissions.pull_requests) }}"
+              echo "Metadata: ${{ toJson(github.event.repository.permissions.metadata) }}"
+              echo "Administration: ${{ toJson(github.event.repository.permissions.administration) }}"
+              echo "Actions: ${{ toJson(github.event.repository.permissions.actions) }}"
+              echo "Checks: ${{ toJson(github.event.repository.permissions.checks) }}"
+              echo "Deployments: ${{ toJson(github.event.repository.permissions.deployments) }}"
+              echo "Environments: ${{ toJson(github.event.repository.permissions.environments) }}"
+              echo "Packages: ${{ toJson(github.event.repository.permissions.packages) }}"
+              echo "Pages: ${{ toJson(github.event.repository.permissions.pages) }}"
+              echo "Repository Projects: ${{ toJson(github.event.repository.permissions.repository_projects) }}"
+              echo "Secrets: ${{ toJson(github.event.repository.permissions.secrets) }}"
+              echo "Security Events: ${{ toJson(github.event.repository.permissions.security_events) }}"
+              echo "Statuses: ${{ toJson(github.event.repository.permissions.statuses) }}"
+
+          - name: Run actions/stale
+            uses: actions/stale@v10
+            with:
+                days-before-pr-stale: 7 # Number of days of inactivity before marking as stale
+                stale-pr-message: "This Pull Request is stale because it has been open 7 days with no activity."
+                days-before-pr-close: 7 # Number of days after marking as stale before closing
+                close-pr-message: "Closing this Pull Request due to inactivity."
+                days-before-issue-stale: -1 # Disables marking issues as stale
+                days-before-issue-close: -1 # Disables closing stale issues
