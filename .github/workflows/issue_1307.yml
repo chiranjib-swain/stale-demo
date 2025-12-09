@@ -11,15 +11,9 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             pull-requests: write
-            # issues: write # Added this to ensure issues can be processed if needed
+            issues: read # Added this to ensure issues can be processed if needed
 
         steps:
-          - name: Check Permissions
-            run: |
-              echo "Repository permissions:"
-              echo "Contents: ${{ toJson(github.event.repository.permissions.contents) }}"
-              echo "Issues: ${{ toJson(github.event.repository.permissions.issues) }}"
-              echo "Pull Requests: ${{ toJson(github.event.repository.permissions.pull_requests) }}"
 
           - name: Run actions/stale
             uses: actions/stale@v10
