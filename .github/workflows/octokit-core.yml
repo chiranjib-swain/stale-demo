@@ -22,5 +22,5 @@ jobs:
       - name: Run actions/stale
         uses: chiranjib-swain/stale@octokit/core-upgrade
         with:
-          days-before-stale: 180
+          days-before-stale: 580
           days-before-close: 10
