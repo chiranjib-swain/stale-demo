@@ -11,12 +11,12 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: chiranjib-swain/stale@actions-github-upgrade
+      - uses: chiranjib-swain/stale@test-num-hours
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'This issue is stale because it has been open for 30 days with no activity.'
           stale-pr-message: 'This pull request is stale because it has been open for 30 days with no activity.'
           days-before-issue-stale: 800
           days-before-pr-stale: 800
-          days-before-close: 130
+          days-before-close: 4
           remove-stale-when-updated: 'true'
