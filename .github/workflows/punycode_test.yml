@@ -14,9 +14,9 @@ jobs:
       - uses: chiranjib-swain/stale@actions-github-upgrade
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-issue-message: 'This issue is stale because it has been open for 30 days with no activity.'
-          stale-pr-message: 'This pull request is stale because it has been open for 30 days with no activity.'
-          days-before-issue-stale: 800
-          days-before-pr-stale: 800
+          stale-issue-message: 'This issue is stale because it has been open for 200 days with no activity.'
+          stale-pr-message: 'This pull request is stale because it has been open for 200 days with no activity.'
+          days-before-issue-stale: 200
+          days-before-pr-stale: 200
           days-before-close: 2
           remove-stale-when-updated: 'true'
