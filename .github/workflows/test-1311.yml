@@ -13,4 +13,4 @@ jobs:
         with:
           operations-per-run: 5
           days-before-stale: 200
-          days-before-close: 5
+          days-before-close: 3
