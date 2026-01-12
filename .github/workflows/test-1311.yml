@@ -11,5 +11,7 @@ jobs:
     steps:
       - uses: shamoon/stale@ignore-stale-label-events
         with:
-          days-before-stale: 200
-          days-before-close: 3
+          stale-issue-message: 'This issue is stale because it has been open for 150 days with no activity.'
+          stale-pr-message: 'This pull request is stale because it has been open for 150 days with no activity.'
+          days-before-stale: 150
+          days-before-close: 7
