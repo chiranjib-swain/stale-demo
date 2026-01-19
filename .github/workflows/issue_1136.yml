@@ -1,4 +1,4 @@
-name: "1136 - Mark stale issues and pull requests "
+name: "Mark stale issues/PRs"
 on:
   workflow_dispatch: 
 permissions:
@@ -12,5 +12,5 @@ jobs:
       - uses: itchyny/actions-stale@fix-state-cache-check
         with:
           operations-per-run: 5
-          days-before-stale: 600
+          days-before-stale: 30
           days-before-close: 70
