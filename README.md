@@ -23,11 +23,13 @@ The stale workflow is configured in `.github/workflows/stale.yml` with the follo
 #### Issues
 - **Days before stale**: 15 days
 - **Stale message**: "This issue is stale because it has been open for 30 days with no activity."
+  - *Note: The message mentions 30 days, but the actual threshold is configured to 15 days*
 - **Days before close**: 7 days (after being marked stale)
 
 #### Pull Requests
 - **Days before stale**: 20 days
 - **Stale message**: "This pull request is stale because it has been open for 30 days with no activity."
+  - *Note: The message mentions 30 days, but the actual threshold is configured to 20 days*
 - **Days before close**: 7 days (after being marked stale)
 
 ### Additional Settings
