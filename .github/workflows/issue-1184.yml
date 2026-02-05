@@ -11,7 +11,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: chiranjib-swain/stale@enhancement/ignore-stale-labeling-events
+      - uses: actions/stale@enhancement/ignore-stale-labeling-events
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'This issue is stale because it has been open for 300 days with no activity.'
