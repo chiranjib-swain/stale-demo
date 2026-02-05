@@ -11,11 +11,11 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@refs/pull/1311/head
+      - uses: chiranjib-swain/stale@enhancement/ignore-stale-labeling-events
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-issue-message: 'This issue is stale because it has been open for 200 days with no activity.'
-          stale-pr-message: 'This pull request is stale because it has been open for 200 days with no activity.'
+          stale-issue-message: 'This issue is stale because it has been open for 300 days with no activity.'
+          stale-pr-message: 'This pull request is stale because it has been open for 300 days with no activity.'
           days-before-issue-stale: 300
           days-before-pr-stale: 300
           days-before-close: 100
