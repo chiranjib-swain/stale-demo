@@ -22,7 +22,7 @@ jobs:
           days-before-pr-stale: 50
           days-before-close: 20
   
-          close-issue-reason: 'Closed'
+          close-issue-reason: 'completed'
           close-issue-message: 'Testing the closing of the issue.'
   
           # Helpful debug signal
