@@ -1,0 +1,32 @@
+name: Repro stale - state_reason permissions
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run actions/stale
+        uses: actions/stale@v10.1.1
+        with:
+          # Only enable PR processing
+          days-before-stale: 100
+          days-before-close: 2
+          stale-pr-message: 'This pull request is stale because it has been open for 30 days with no activity. Remove the stale label or comment or this will be closed in 7 days.'
+          close-pr-message: 'This pull request was closed due to inactivity.'
+          
+          # Disable issues processing!
+          stale-issue-message: ''
+          close-issue-message: ''
+          days-before-stale-issue: -1
+          days-before-close-issue: -1
+  
+          # Helpful debug signal
+          debug-only: false
