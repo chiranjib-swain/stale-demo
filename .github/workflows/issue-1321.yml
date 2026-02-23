@@ -24,6 +24,7 @@ jobs:
   
           close-issue-reason: 'completed'
           close-issue-message: 'Testing the closing of the issue.'
+          close-pr-reason: 'completed'
   
           # Helpful debug signal
           debug-only: false
