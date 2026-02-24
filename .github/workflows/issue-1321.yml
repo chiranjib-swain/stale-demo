@@ -16,14 +16,14 @@ jobs:
       - name: Run actions/stale
         uses: actions/stale@v10.1.1
         with:
-          stale-issue-message: 'This issue is stale because it has been open for 50 days with no activity.'
+          # stale-issue-message: 'This issue is stale because it has been open for 50 days with no activity.'
           stale-pr-message: 'This pull request is stale because it has been open for 50 days with no activity.'
-          days-before-issue-stale: 50
+          # days-before-issue-stale: 50
           days-before-pr-stale: 50
-          days-before-close: 2
+          days-before-pr-close: 1
   
-          close-issue-reason: 'completed'
-          close-issue-message: 'Testing the closing of the issue.'
+          # close-issue-reason: 'completed'
+          close-pr-message: 'Testing the closing of the pull request.'
           close-pr-reason: 'completed'
   
           # Helpful debug signal
