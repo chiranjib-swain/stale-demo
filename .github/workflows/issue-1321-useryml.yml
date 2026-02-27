@@ -16,7 +16,7 @@ jobs:
       with:
         operations-per-run: 150
         days-before-stale: 173
-        days-before-close: 7
+        days-before-close: 1
         ascending: true
         stale-issue-message: '...'
         close-issue-message: '...'
