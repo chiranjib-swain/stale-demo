@@ -8,7 +8,6 @@ on:
 jobs:
   stale:
     permissions:
-      # https://github.com/actions/stale#recommended-permissions
       actions: write
       contents: write # for delete-branch option
       issues: write
@@ -29,9 +28,6 @@ jobs:
         stale-pr-label: 'stale'
         exempt-issue-labels: 'no-stale'
         exempt-pr-labels: 'no-stale'
-        remove-stale-when-updated: true
-        delete-branch: true
-        enable-statistics: true
 
         remove-stale-when-updated: false  # Important: set to false
         delete-branch: false              # Disable for safety during testing
