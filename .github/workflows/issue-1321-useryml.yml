@@ -1,7 +1,5 @@
 name: Stale
 on:
-  # schedule:
-  #   - cron: '40 3,4,5,6,7 * * *'
   workflow_dispatch: {}
 jobs:
   stale:
@@ -12,20 +10,20 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: chiranjib-swain/stale@force-state-reason-pr # v10.1.1
+    - uses: chiranjib-swain/stale@force-state-reason-pr
       with:
         operations-per-run: 150
-        days-before-stale: 173
-        days-before-close: 1
+        days-before-stale: 0      # Mark stale immediately
+        days-before-close: 0      # Close immediately after stale
         ascending: true
+        stale-pr-message: 'This PR is stale - testing'
+        close-pr-message: 'Closing stale PR - testing'
         stale-issue-message: '...'
         close-issue-message: '...'
-        stale-pr-message: '...'
-        close-pr-message: '...'
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
         exempt-issue-labels: 'no-stale'
         exempt-pr-labels: 'no-stale'
-        remove-stale-when-updated: true
-        delete-branch: true
+        remove-stale-when-updated: false  # Important: set to false
+        delete-branch: false              # Disable for safety during testing
         enable-statistics: true
