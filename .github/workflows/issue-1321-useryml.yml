@@ -1,11 +1,16 @@
+
 name: Stale
 on:
-  workflow_dispatch: {}
+  # schedule:
+  #   - cron: '40 3,4,5,6,7 * * *'
+  workflow_dispatch: {} # Allow also to run manually, for easier testing
+
 jobs:
   stale:
     permissions:
+      # https://github.com/actions/stale#recommended-permissions
       actions: write
-      contents: write
+      contents: write # for delete-branch option
       issues: write
       pull-requests: write
     runs-on: ubuntu-latest
@@ -13,17 +18,21 @@ jobs:
     - uses: chiranjib-swain/stale@force-state-reason-pr
       with:
         operations-per-run: 150
-        days-before-stale: 0      # Mark stale immediately
-        days-before-close: 0      # Close immediately after stale
-        ascending: true
-        stale-pr-message: 'This PR is stale - testing'
-        close-pr-message: 'Closing stale PR - testing'
+        days-before-stale: 173
+        days-before-pr-close: 0
+        ascending: true  # Start from processing oldest PRs first.
         stale-issue-message: '...'
         close-issue-message: '...'
+        stale-pr-message: '...'
+        close-pr-message: '...'
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
         exempt-issue-labels: 'no-stale'
         exempt-pr-labels: 'no-stale'
+        remove-stale-when-updated: true
+        delete-branch: true
+        enable-statistics: true
+
         remove-stale-when-updated: false  # Important: set to false
         delete-branch: false              # Disable for safety during testing
         enable-statistics: true
